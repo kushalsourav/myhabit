@@ -1,0 +1,56 @@
+.habit-head {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.habits-header {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding-bottom: 5px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.habit-card {
+    display: grid;
+    grid-template-rows: 20px 55px 35px;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    width: 250px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    position: relative;
+}
+.habit-link {
+    text-decoration: none;
+    color: inherit;
+}
+.habit-title {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+.habit-labels {
+    display: flex;
+    gap: 1rem;
+}
+.habit-label {
+    font-size: 12px;
+    width: auto;
+    color: #fff;
+    font-weight: bold;
+    padding: 3px 6px;
+}
+.habit-buttons {
+   display: flex;
+   padding: 5px;
+   gap: 1rem;
+   align-items: center;
+}
+.btn-arrow {
+    font-size: 1rem !important;
+    height: 1.5rem;
+    background-color:transparent;
+    color: var(--color-tertiary);
+    border: none;
+}
+.btn-arrow:not(:last-child) {
+  margin-right: 1rem;
+}
