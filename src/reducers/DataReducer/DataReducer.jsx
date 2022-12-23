@@ -24,6 +24,8 @@ const DataReducer = (state, action) => {
                return {...state, resetTime : action.resetTime};
           case "COMPLETED" :
                return {...state, completedHabit:action.completedHabit};
+          case "TOAST":
+               return {...state, toast: {...state.toast , toastType: action.toastType, toastMessage:action.toastMessage}};
           default:
               return state;
     };

@@ -34,6 +34,10 @@ const initalDataState = {
     defaultTimer : {minute: 25, seconds: 60},
     setTimer : false,
     resetTime:1500000,
+    toast: {
+        toastType: '',
+        toastMessage: ''
+      },
 
 };
 const DataContext = createContext();
