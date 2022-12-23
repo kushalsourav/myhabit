@@ -1,0 +1,5 @@
+.form-habit > .input-label,
+.form-habit >.form-control > .input-label {
+    margin-top: 0;
+ }
+
