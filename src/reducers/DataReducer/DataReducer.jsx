@@ -16,6 +16,14 @@ const DataReducer = (state, action) => {
                return {...state, habits: action.habits};
           case "STATE" :
                return {...state, state: Number(state.state) +  Number(action.state)};
+          case "SINGLE_HABIT":
+               return {...state, singleHabit: action.singleHabit};
+          case "SET_TIMER" : 
+               return {...state, setTimer: action.setTimer};
+          case "RESET_TIME": 
+               return {...state, resetTime : action.resetTime};
+          case "COMPLETED" :
+               return {...state, completedHabit:action.completedHabit};
           default:
               return state;
     };

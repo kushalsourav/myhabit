@@ -1,0 +1,16 @@
+.habits {
+  display: grid;
+  grid-template-rows: 30px auto;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  width: 600px;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  height: 150px;
+}
+
+.habits-title {
+  font-size: 2.3rem;
+  font-weight: 300;
+  color: var(--color-tertiary);
+}

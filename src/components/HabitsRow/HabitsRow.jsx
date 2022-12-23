@@ -1,9 +1,8 @@
-import React from 'react'
 import Habitcard from '../Habitcard/Habitcard';
 import Grid14 from '../Ui/Grid-1-4/Grid14';
 import "./HabitsRow.css";
 
-const HabitsRow = ({state, setData,  getEditHabit,  isActive, habits , newHabit}) => {
+const HabitsRow = ({state, setData,  getEditHabit,  isActive, habits , newHabit, removeHabit, completed, getSingleHabit}) => {
     let isPrev , isNext;
     isPrev = state <= 0 ; 
     isNext = state > habits.length - 5 ;
@@ -31,7 +30,7 @@ const HabitsRow = ({state, setData,  getEditHabit,  isActive, habits , newHabit}
 
        </div>
        <Grid14>
-       <Habitcard habits={habits.slice(0 + Number(state) ,  4 + Number(state))} editHabit={newHabit}  getEditHabit={getEditHabit} setData={setData} />
+       <Habitcard habits={habits.slice(0 + Number(state) ,  4 + Number(state))} editHabit={newHabit}  getEditHabit={getEditHabit} setData={setData} removeHabit={removeHabit} completed={completed} getSingleHabit={getSingleHabit}/>
        </Grid14>
     </div>
   );

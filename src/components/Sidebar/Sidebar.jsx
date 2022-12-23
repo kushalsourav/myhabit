@@ -21,7 +21,7 @@ const Sidebar = ({setData, timer, handleLogout, authDispatch, navigate}) => {
             <div className="sidebar-icon"><i className="fa fa-archive" aria-hidden="true"></i></div>
                 <div className="sidebar-item-name">Archive</div>
             </Link> 
-            <Link to="/Profile" className="sidebar-items">
+            <Link to="/Profile" onClick={(e) => timer && e.preventDefault() } className="sidebar-items">
                 <div className="sidebar-icon"><i className="fa fa-user-circle-o" aria-hidden="true"></i></div>
                 <div className="sidebar-item-name">Profile</div>
             </Link>
