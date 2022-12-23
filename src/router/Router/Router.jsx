@@ -4,7 +4,7 @@ import Home from "../../pages/Home/Home";
 import Label from "../../pages/Label/Label";
 import Profile from "../../pages/Profile/Profile";
 import Habit from "../../pages/Habit/Habit";
-import Welcome from "../../pages/Welcome/Welcome"
+import WelcomePage from "../../pages/WelcomePage/WelcomePage"
 import PageNotFound from "../PageNotFound/PageNotFound";
 
 
@@ -12,7 +12,7 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 const Router = () => {
   return (
     <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<WelcomePage />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Label" element={<Label /> }/>
         <Route path="/Habit" element={<Habit />} />

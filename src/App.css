@@ -1,1 +1,17 @@
 @import url("https://enma1.netlify.app/packages/index.css");
+@import url('https://fonts.googleapis.com/css2?family=Commissioner&display=swap');
+
+.cta-btn {
+    background-color: var(--color-tertiary);
+    border: 2px solid var(--color-tertiary);
+    color: #fff;
+    font-size: 14px;
+}
+.cta-btn:hover {
+    background-color: #fff;
+    border:2px solid var(--color-tertiary);
+    color: var(--color-tertiary);
+}
+.container {
+    margin: 2rem;
+}

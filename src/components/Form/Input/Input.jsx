@@ -22,7 +22,7 @@ const Input = ({name, postInput, placeholder, id , value , error, setPassVisible
 
         </div>
         </>
-    )
+    );
 };
 
 export default Input;
