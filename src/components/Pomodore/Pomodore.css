@@ -1,0 +1,18 @@
+.pomodore {
+    border: 2px solid var(--color-tertiary);
+    color: var(--color-tertiary);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.pomodore-timer {
+    font-size: 8rem;
+    text-align: center;
+    font-weight: 300;
+}
+.pomodore-buttons {
+    margin-top: 3rem;
+    text-align: center;
+ }
+.pomodore-button {
+   margin: 5px;
+}

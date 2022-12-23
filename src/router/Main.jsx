@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useData } from '../contexts/DataContext/DataContext';
 import { useAuth } from '../contexts/AuthContext/AuthContext';
@@ -10,6 +11,12 @@ const Main = () => {
   const navigate = useNavigate();
   const {data, setData, } = useData();
   const {handleLogout, authDispatch} = useAuth();
+  useEffect((e) => {
+    if(location.pathname !== '/SinglePage') {
+      setData({type:"RESET_TIME", resetTime: 1500000})
+     }
+
+  },[ location.pathname,  setData])
   return (
     <div>
               <Grid28>

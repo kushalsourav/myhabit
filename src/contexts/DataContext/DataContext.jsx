@@ -1,6 +1,6 @@
 import { createContext, useContext,  useReducer } from "react";
 import DataReducer from "../../reducers/DataReducer/DataReducer";
-import { handleSubmitHabit, getEditHabit } from "../../utils/helperFunctions/helperFunctions";
+import { handleSubmitHabit, getEditHabit, returnDates , moveToCompleted} from "../../utils/helperFunctions/helperFunctions";
 
 const initalDataState = {
     formType:"",
@@ -28,7 +28,12 @@ const initalDataState = {
     editId: "",
     isEdit: false,
     habits:[],
-    state:""
+    state:"",
+    singleHabit: {},
+    completedHabit: [],
+    defaultTimer : {minute: 25, seconds: 60},
+    setTimer : false,
+    resetTime:1500000,
 
 };
 const DataContext = createContext();
@@ -37,8 +42,13 @@ const useData = () => useContext(DataContext);
 
 const DataProvider = ({children}) => {
      const [data , setData] = useReducer(DataReducer, initalDataState);
+     const removeCompleted = (removeHabit) => {
+        const completedHabit  = data.completedHabit.filter((habit) => habit._id !== removeHabit);
+        setData({type:"COMPLETED", completedHabit:completedHabit})
+        
+        };
     return(
-        <DataContext.Provider value={{data, setData ,handleSubmitHabit, getEditHabit}}>
+        <DataContext.Provider value={{data, setData ,handleSubmitHabit, getEditHabit, removeCompleted, returnDates, moveToCompleted}}>
             {children}
         </DataContext.Provider>
     );

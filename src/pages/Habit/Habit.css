@@ -1,0 +1,7 @@
+.single-page {
+    margin-top: -30px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 2rem;
+}

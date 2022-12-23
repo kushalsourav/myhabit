@@ -36,4 +36,19 @@ export const getEditHabit = (editHabit, habit,  setData) => {
     editHabit.repeat = habit.repeat;
     setData({type:"IS_EDIT", isEdit:true});
     setData({type:"MODAL", modal:true});
+};
+
+export const moveToCompleted = (movehabit, data, setData, deleteHabit) => {
+    const completedHabit  = data.habits.filter((habit) => habit._id === movehabit);
+    setData({type:"COMPLETED", completedHabit:data.completedHabit.concat(completedHabit)})
+    deleteHabit(movehabit,setData)
+};
+
+export const returnDates = (startdate, enddate) => {
+    let startDate , endDate;
+    if(startdate !== undefined && enddate !== undefined) {
+            startDate  = new Date(startdate.replace("-", "/"));
+            endDate =  new Date(enddate.replace("-", "/"));
+    }
+      return [startDate, endDate]
 }

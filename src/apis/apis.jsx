@@ -33,3 +33,26 @@ const getHabit = async (setData) => {
          console.log(error)
     };
 };
+
+export  const getSingleHabit = async (habitId,setData) => {
+    try {
+            await axios.get(`/api/habits/${habitId}`, {headers : {authorization: localStorage.getItem("token")}} ).then((response) => {
+
+                setData({type:"SINGLE_HABIT", singleHabit:response.data.habit});
+            })
+    } catch (error) {
+            console.log(error)
+    };
+};
+
+export  const deleteHabit = async (habitId,setData) => {
+    try {
+            await axios.delete(`/api/habits/${habitId}`, {headers : {authorization: localStorage.getItem("token")}} ).then((response) => {
+                if(response.status === 200) {
+                    getHabit(setData);
+                }
+            })
+    } catch (error) {
+            console.log(error);
+    };
+};
