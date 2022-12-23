@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Habitcard.css";
 
-const Habitcard = ({habits, editHabit, getEditHabit, setData, completed, getSingleHabit, removeHabit}) => {
+const Habitcard = ({habits, editHabit, getEditHabit, setData, completed, getSingleHabit, removeHabit, postToast}) => {
     return (
         <>
         {habits.map((habit) => {
@@ -20,7 +20,7 @@ const Habitcard = ({habits, editHabit, getEditHabit, setData, completed, getSing
                 <div className="habit-buttons">
                 <div className="habit-times">{habit.goal}day</div>
                 <button className="btn-icon" style={{color: `rgb(${habit.colorcode})`}} onClick={() => {
-                            removeHabit(habit._id,setData,)
+                            removeHabit(habit._id,setData,postToast)
                         }}><i className="fa fa-trash" aria-hidden="true"></i>
                 </button>
                

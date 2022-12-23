@@ -1,9 +1,10 @@
 import axios from "axios";
 
-export const postHabit = async (habit,setData, ) => {
+export const postHabit = async (habit,setData, postToast) => {
     try {
         await axios.post("/api/habits", {habit}, {headers : {authorization: localStorage.getItem("token")}}).then((response) => {
             if(response.status === 200) {
+                postToast("success", `${habit.title} created`)
                 getHabit(setData)
              }
         });
@@ -12,10 +13,11 @@ export const postHabit = async (habit,setData, ) => {
     };
 };
 
-export const editHabit = async (habitId,habit,setData, ) => {
+export const editHabit = async (habitId,habit,setData, postToast) => {
   try {
 	  await axios.post(`/api/habits/${habitId}`, {habit},{headers : {authorization: localStorage.getItem("token")}}).then((response) => {
 	       if(response.status === 200) {
+            postToast("success", `${habit.title} edited successfully`)
             getHabit(setData)
            };
 	    })
@@ -37,7 +39,6 @@ const getHabit = async (setData) => {
 export  const getSingleHabit = async (habitId,setData) => {
     try {
             await axios.get(`/api/habits/${habitId}`, {headers : {authorization: localStorage.getItem("token")}} ).then((response) => {
-
                 setData({type:"SINGLE_HABIT", singleHabit:response.data.habit});
             })
     } catch (error) {
@@ -45,11 +46,12 @@ export  const getSingleHabit = async (habitId,setData) => {
     };
 };
 
-export  const deleteHabit = async (habitId,setData) => {
+export  const deleteHabit = async (habitId,setData, postToast) => {
     try {
             await axios.delete(`/api/habits/${habitId}`, {headers : {authorization: localStorage.getItem("token")}} ).then((response) => {
                 if(response.status === 200) {
                     getHabit(setData);
+                    postToast("success", "habit deleted successfully");
                 }
             })
     } catch (error) {
