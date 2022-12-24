@@ -26,6 +26,10 @@ const DataReducer = (state, action) => {
                return {...state, completedHabit:action.completedHabit};
           case "TOAST":
                return {...state, toast: {...state.toast , toastType: action.toastType, toastMessage:action.toastMessage}};
+          case "ARCHIVES" :
+               return {...state, archive: action.archive};
+          case "LABEL" :
+                return {...state, label:action.label};
           default:
               return state;
     };

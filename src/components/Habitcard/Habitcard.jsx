@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Habitcard.css";
 
-const Habitcard = ({habits, editHabit, getEditHabit, setData, completed, getSingleHabit, removeHabit, postToast}) => {
+const Habitcard = ({habits, editHabit, getEditHabit, setData, completed, getSingleHabit, removeHabit, postToast, postArchive, restoreHabit}) => {
     return (
         <>
         {habits.map((habit) => {
@@ -23,6 +23,21 @@ const Habitcard = ({habits, editHabit, getEditHabit, setData, completed, getSing
                             removeHabit(habit._id,setData,postToast)
                         }}><i className="fa fa-trash" aria-hidden="true"></i>
                 </button>
+                {
+                    postArchive  && 
+                    <button className="btn-icon" style={{color: `rgb(${habit.colorcode})`}} onClick={() => {
+                        postArchive(habit._id,  setData, postToast)
+                     habits.length >=3  &&  setData({type:"STATE", state:-1})
+                    }}><i className="fa fa-archive" aria-hidden="true"></i>
+                    </button>
+                }
+                   {
+                            restoreHabit &&    
+                            <button className="btn-icon" style={{color: `rgb(${habit.colorcode})`}}
+                              onClick={() => {restoreHabit(habit._id, setData, postToast)}}>
+                              <i className="fa fa-window-restore" aria-hidden="true"></i>
+                            </button>
+                        }
                
                 </div>
                 {

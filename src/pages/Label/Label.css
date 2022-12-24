@@ -1,0 +1,13 @@
+.label-list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 5px 2rem;
+    background-color:rgb(188, 193, 197);
+    width: 250px;
+    text-align: center;
+    margin: 0 auto;
+}
+.label-list:not(:last-child) {
+    margin-bottom: 1rem;
+}
