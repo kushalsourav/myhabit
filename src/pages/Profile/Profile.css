@@ -1,0 +1,18 @@
+.personal-information {
+    padding: 30px;
+    margin: 0 auto;
+}
+.personal-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+.user-email  {
+    font-size: 1.4rem;
+}
+
+.user-name {
+    font-size: 1.25rem;
+}

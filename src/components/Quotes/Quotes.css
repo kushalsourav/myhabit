@@ -1,0 +1,16 @@
+.quote {
+   width: 500px;
+   margin: 0 auto;
+   text-align: center;
+   padding: 2rem 1rem;
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.quote-text {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+.quote-author {
+    font-size: 14px;
+    font-weight: 600;
+}

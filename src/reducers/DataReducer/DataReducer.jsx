@@ -30,6 +30,8 @@ const DataReducer = (state, action) => {
                return {...state, archive: action.archive};
           case "LABEL" :
                 return {...state, label:action.label};
+          case "QUOTE" :
+               return {...state , quote:action.quote};
           default:
               return state;
     };
