@@ -38,7 +38,8 @@ const initalDataState = {
         toastType: '',
         toastMessage: ''
       },
-      archive: [],
+    archive: [],
+    quote : {}
 
 };
 const DataContext = createContext();
