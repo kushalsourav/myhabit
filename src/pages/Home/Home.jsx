@@ -3,7 +3,7 @@ import { useAuth } from "../../contexts/AuthContext/AuthContext";
 import NewHabit from "../../components/NewHabit/NewHabit"
 import Modal from "../../components/Modal/Modal"
 import useError from "../../hooks/useError";
-import { postHabit, editHabit,deleteHabit,getSingleHabit } from "../../apis/apis";
+import { postHabit, editHabit,deleteHabit,getSingleHabit, postArchive } from "../../apis/apis";
 import HabitsRow from "../../components/HabitsRow/HabitsRow";
 import useToast from "../../hooks/useToast";
 import Dashboard from "../../components/Dashboard/Dashboard";
@@ -15,10 +15,10 @@ const Home = () => {
   const [error, setError] = useError();
   const postToast = useToast();
   return (
-    <div>
+    <div className="home">
         <Dashboard inProgress={data.habits.length} completed={data.completedHabit.length} firstName={authState.userData.firstName}/>
        <HabitsRow state={data.state} setData={setData}  getEditHabit={getEditHabit} isActive={"Active"} newHabit={data.newHabit}
-        habits={data.habits} removeHabit={deleteHabit}  completed={false} getSingleHabit={getSingleHabit} postToast={postToast} />
+        habits={data.habits} removeHabit={deleteHabit}  completed={false} getSingleHabit={getSingleHabit} postToast={postToast} postArchive={postArchive} />
 
         <HabitsRow state={data.state} setData={setData} deleteHabit={removeCompleted} completed={true} isActive={"completed"}  habits={data.completedHabit} removeHabit={removeCompleted}  />
       <Modal handleClose={() => setData({type:"MODAL", modal:false})} isOpen={data.modal}>

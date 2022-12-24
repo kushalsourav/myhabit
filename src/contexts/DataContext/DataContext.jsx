@@ -24,7 +24,7 @@ const initalDataState = {
         {color:{colorname:"navy", colorcode:"0,0,128"}},
         {color:{colorname:"green", colorcode:"0,128,0"}}
     ],
-    label: ["label 1"],
+    label: [],
     editId: "",
     isEdit: false,
     habits:[],
@@ -38,6 +38,7 @@ const initalDataState = {
         toastType: '',
         toastMessage: ''
       },
+      archive: [],
 
 };
 const DataContext = createContext();
