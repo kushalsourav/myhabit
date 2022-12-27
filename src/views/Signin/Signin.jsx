@@ -4,12 +4,15 @@ import Form from "../../components/Form/Form";
 import { useAuth } from "../../contexts/AuthContext/AuthContext";
 import { useData } from "../../contexts/DataContext/DataContext";
 import useToggle from "../../hooks/useToggle";
+import useToast from "../../hooks/useToast";
+import { getUser } from "../../apis/apis";
 
 const SignIn = () => {
     const {authDispatch, authState} = useAuth();
     const [toggle, setToggle] = useToggle();
     const {data} = useData();
-     
+    const postToast = useToast();
+
     let navigate = useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -26,12 +29,11 @@ const SignIn = () => {
             });
         } 
         catch (error) {
-            console.log(error)
             if(error.response.status === 404) {
-                 console.log('warning',"the email you entered is not registered")
+                 postToast('warning',"the email you entered is not registered")
             }
             if(error.response.status === 401) {
-                 console.log('warning',"you have entered incorrect password")
+                 postToast('warning',"you have entered incorrect password")
             }
         }
     };
@@ -52,6 +54,7 @@ const SignIn = () => {
               console.log(error)
           }
     };
+    getUser(authDispatch);
     return(
         <>
             <Form onHandleSubmit={handleLogin} type={data.formType} setInput={authState} postInput={authDispatch} passVisible={!toggle} setPassVisible={setToggle} /> 

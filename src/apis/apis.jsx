@@ -1,5 +1,15 @@
 import axios from "axios";
 
+export const  getUser =  async(setData) => {
+    try {
+       await axios.get("/api/user",{headers : { authorization: localStorage.getItem("token")} }).then((response) => 
+         setData({type:"USER_DATA", userData: response.data.user})
+       )
+    } catch (error) {
+       
+    };
+ };
+
 export const postHabit = async (habit,setData, postToast) => {
     try {
         await axios.post("/api/habits", {habit}, {headers : {authorization: localStorage.getItem("token")}}).then((response) => {
