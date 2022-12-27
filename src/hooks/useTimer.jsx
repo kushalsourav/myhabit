@@ -13,7 +13,8 @@ const useTimer = (initial, defaultTime) => {
         const interval = setInterval(handleTimerout)
         !initial && clearInterval(interval)
         return () => clearInterval(interval);
-    },[initial,defaultTime])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[initial, defaultTime])
     return calculateTime(timer);
 }
 
