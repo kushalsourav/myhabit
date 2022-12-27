@@ -16,7 +16,7 @@ export const handleSubmitHabit = (e,habit,isEdit,setData,editId, editHabit, post
         !habit.label && postError("label", "please select label");
         !habit.repeat && postError("repeat", "please select times to repeat");
         !habit.goal && postError("goal", "please select goal");
-        !filterByDate(habit)  && postError("enddate", " end date should be lesser than start date");
+        !filterByDate(habit)  && postError("enddate", " end date should not be lesser than start date");
         !habit.enddate && postError("enddate", "Please enter end date");
         !habit.startdate &&   postError("startdate", "Please enter start date");
         !habit.title && postError("title","Please enter the title");
